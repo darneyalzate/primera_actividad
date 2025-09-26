@@ -5,7 +5,7 @@ USE AGENCIA_VIAJE;
 CREATE TABLE CLIENTES(
  id INT AUTO_INCREMENT PRIMARY KEY ,
  nombre_completo VARCHAR(40) not null,
- tipo_documento VARCHAR(11) NOT NULL,
+ tipo_documento VARCHAR(15) NOT NULL,
  telefono INT(10) not null UNIQUE,
  direccion VARCHAR(40) not null,
  correo VARCHAR(40) not null
@@ -101,7 +101,3 @@ CREATE TABLE GUIAS_TURISTICOS(
 );
  
 DESCRIBE GUIAS_TURISTICOS;
-
- 
- 
- 
