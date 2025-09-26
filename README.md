@@ -3,21 +3,22 @@ CREATE DATABASE AGENCIA_VIAJE;
 USE AGENCIA_VIAJE;
 
 CREATE TABLE CLIENTES(
- id INT AUTO_INCREMENT PRIMARY KEY ,
+ id INT AUTO_INCREMENT PRIMARY KEY,
  nombre_completo VARCHAR(40) not null,
  tipo_documento VARCHAR(15) NOT NULL,
  telefono INT(10) not null UNIQUE,
  direccion VARCHAR(40) not null,
- correo VARCHAR(40) not null
+ correo VARCHAR(40) not null UNIQUE 
  
  );
  
 DESCRIBE CLIENTES;
+
  
 CREATE TABLE DESTINO_VIAJE(
  id INT AUTO_INCREMENT PRIMARY KEY,
- nacional VARCHAR (10) NOT NULL,
- internacional VARCHAR (10) NOT NULL
+ nombre_destino VARCHAR (20),
+ tipo_destino enum ('nacional', 'internacional') NOT NULL
 
 );
 
@@ -60,7 +61,7 @@ CREATE TABLE PAQUETES(
  codigo_unico INT (10) not null unique,
  disponibilidad VARCHAR (10) not NULL ,
  fecha_salida DATETIME	not null,
- precio DECIMAL (20) not null,
+ precio DECIMAL (10. 2) not null,
  duracion INT (10) not null,
  actividad_incluida VARCHAR (10) NOT NULL,
  id_pasajero int,
@@ -77,7 +78,7 @@ CREATE TABLE RESERVA(
  fecha_reserva DATETIME NOT NULL,
  estado_reserva VARCHAR (20) NOT NULL,
  detalle_pago VARCHAR (20) NOT NULL,
- paquete_selecionado VARCHAR (20) NOT NULL,
+ paquete_seleccionado VARCHAR (20) NOT NULL,
  id_vuelo int,
  id_destino int,
  id_cliente int,
@@ -91,7 +92,6 @@ DESCRIBE RESERVA;
 
 CREATE TABLE GUIAS_TURISTICOS(
  id int AUTO_INCREMENT PRIMARY KEY,
- id_guias INT (10) UNIQUE NOT NULL,
  nombre_completo VARCHAR(40) not null,
  tipo_documento VARCHAR (11) NOT NULL,
  idioma_hablar VARCHAR (20) NOT NULL,
@@ -101,3 +101,7 @@ CREATE TABLE GUIAS_TURISTICOS(
 );
  
 DESCRIBE GUIAS_TURISTICOS;
+
+ 
+ 
+ 
