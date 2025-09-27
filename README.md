@@ -61,9 +61,9 @@ CREATE TABLE PAQUETES(
  codigo_unico INT (10) not null unique,
  disponibilidad VARCHAR (10) not NULL ,
  fecha_salida DATETIME	not null,
- precio DECIMAL (10. 2) not null,
+ precio DECIMAL (10) not null,
  duracion INT (10) not null,
- actividad_incluida VARCHAR (10) NOT NULL,
+ actividad_incluida VARCHAR (15) NOT NULL,
  id_pasajero int,
  FOREIGN KEY (id_pasajero) REFERENCES NUMERO_PASAJEROS(id)
  
